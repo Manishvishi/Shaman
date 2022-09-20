@@ -1,12 +1,21 @@
+from .models import Vendor, Consumer
 from rest_framework import serializers
-from Tester.models import vendor, consumer
 
-class vendorSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = vendor
-        fields = ['name', 'city']
 
-class consumerSerializer(serializers.ModelSerializer):
+class VendorSerializers(serializers.ModelSerializer):
     class Meta:
-        model = consumer
-        fields = ['name', 'city', 'product']
+        model = Vendor
+        fields = "__all__"
+
+
+class ConsumerSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Consumer
+        fields = "__all__"
+
+    # def validate(self, attrs):
+    #     name = attrs.get("name")
+
+    #     if len(name) <= 4:
+    #         raise serializers.ValidationError(f"{name} must more then 4 character")
+    #     return attrs

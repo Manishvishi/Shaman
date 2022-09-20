@@ -1,3 +1,12 @@
 from django.contrib import admin
+from .models import Vendor, Consumer
 
-# Register your models here.
+
+@admin.register(Vendor)
+class data(admin.ModelAdmin):
+    list_display  = ['id','name','city']
+
+
+@admin.register(Consumer)
+class data(admin.ModelAdmin):
+    list_display  = ['id','name','city']
