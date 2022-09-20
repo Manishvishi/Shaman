@@ -12,7 +12,7 @@ class Vendor(models.Model):
 
 class Consumer(models.Model):
     vendor = models.ForeignKey(
-        Vendor, on_delete=models.CASCADE, related_name='Vendor_detail')
+        Vendor, on_delete=models.CASCADE, related_name='Vendor')
     name = models.CharField(max_length=20)
     city = models.CharField(max_length=20)
 
